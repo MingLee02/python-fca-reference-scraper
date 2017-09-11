@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+build/
+dist/
+.coverage
+.coverage.*
+db.sqlite3
+
+static_media/
+local_settings.py
