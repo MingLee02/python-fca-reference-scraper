@@ -1,6 +1,7 @@
 import csv
 import json
 import requests
+import re
 
 from bs4 import BeautifulSoup
 from django.core import serializers
@@ -40,7 +41,7 @@ def getContactDetails(soup):
 
         return number, email, site
     else:
-        return None, None, None
+        return ' ', ' ', ' '
 
 def scrapeLinks(links):
     for link in links:
@@ -85,7 +86,7 @@ def reference(request):
        
         data = serializers.serialize("json", Company.objects.all())
         return HttpResponse(data, content_type='application/json')
-    else :
+    else:
         return render_to_response('core/main.html', locals())
 
 def export(request):
@@ -105,5 +106,4 @@ def export(request):
                 val = val()
             row.append(val)
         writer.writerow(row)
-    print('wrj')
     return render_to_response('core/main.html', locals())
