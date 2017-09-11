@@ -1,5 +1,7 @@
 import json
+import requests
 
+from bs4 import BeautifulSoup
 from django.http import HttpResponse
 from django.views.generic import TemplateView
 
@@ -7,10 +9,18 @@ from django.views.generic import TemplateView
 class MainView(TemplateView):
     template_name = 'core/main.html'
 
-def reference(request):
-    print(int(request._post['ref']))
+def getSearchButton(reference):
+    search = {
+        'search': reference,
+        'TOKEN': '3wq1nht7eg7tr'
+    }
+    request = requests.get("https://register.fca.org.uk/shpo_searchresultspage?", params=search)._content
+    soup = BeautifulSoup(request)
+    print(soup)
 
+def reference(request):
     if request.method == 'POST' and request.is_ajax():
-        return HttpResponse(json.dumps({'name': 'SUCCESS'}), content_type="application/json")
+        button = getSearchButton(int(request._post['ref']))
+        return HttpResponse(button, content_type="application/json")
     else :
         return render_to_response('core/main.html', locals())
