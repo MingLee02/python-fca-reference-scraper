@@ -1,8 +1,15 @@
-<h1>Fca web scraper</h1>
+{% extends "core/base.html" %}
 
-<form action="{% url 'post_ref' %}" method="post" id="post-reference">
-    {% csrf_token %}
-   	<label>Reference Number</label>
-   	<input type="text" name="ref">
-    <input type="submit" name="submit" value="submit" />
-</form>
+{% load static %}
+
+
+{% block content %}
+    <h1>Fca web scraper</h1>
+
+    <form url="{% url 'post_ref' %}" id="post-reference">
+        {% csrf_token %}
+        <label>Reference Number</label>
+        <input type="text" name="ref">
+        <input type="submit" name="submit" value="submit" />
+    </form>
+{% endblock %}
