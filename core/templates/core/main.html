@@ -12,4 +12,11 @@
         <input type="text" name="ref">
         <input type="submit" name="submit" value="submit" />
     </form>
+
+    <form action="{% url 'export' %}"" method="post">
+        {% csrf_token %}
+        <input type="submit" name="submit" value="Export Data" />
+    </form>
+
+    <div id="content"></div>
 {% endblock %}
