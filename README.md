@@ -19,3 +19,15 @@ will be displayed in a human readable format.
 
 At the end the user should be able to export the data to a file, the format will be
 defaulted to csv but other formats should be available.
+
+Next Steps:
+	Install pep8 and flake8 to lint the code.
+	Install coverage.
+	Write unit tests, aiming for 90+ test coverage.
+	Optimise the code.
+		Use bulk create instead of create, which will minimise the db hits.
+		Read more docs on beautifulsoup see if i cant optimise the scraping.
+		Remove the Ajax call as its not necessary.
+	Finish getting the rest of the required fields.
+	Make the frontend look pretty.
+	
