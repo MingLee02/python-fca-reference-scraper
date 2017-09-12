@@ -1,3 +1,5 @@
 requests==2.18.3
 beautifulsoup4==4.6.0
 Django==1.11.3
+flake8==2.5.4
+flake8-import-order==0.7
