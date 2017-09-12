@@ -20,8 +20,15 @@ will be displayed in a human readable format.
 At the end the user should be able to export the data to a file, the format will be
 defaulted to csv but other formats should be available.
 
+Installation instructions.
+	Create a virtual environment.
+	pip install requirements.txt
+
+Running the app.
+	python manage.py runserver
+	go to http://localhost:8000/. 
+
 Next Steps:
-	Install pep8 and flake8 to lint the code.
 	Install coverage.
 	Write unit tests, aiming for 90+ test coverage.
 	Optimise the code.
