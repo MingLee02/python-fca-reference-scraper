@@ -1,7 +1,7 @@
 from django.conf.urls import url
 from django.contrib import admin
 
-from .views import MainView, reference, export
+from .views import export, MainView, reference
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
